@@ -6,7 +6,7 @@ import {
   __experimentalUnitControl as UnitControl,
 } from '@wordpress/components';
 import { useEffect, useState } from 'react';
-import PanelColorPicker from '../PanelColorPicker/PanelColorPicker.mjs';
+import PanelColorPicker from '../PanelColorPicker/PanelColorPicker.js';
 import './panelShadow.css';
 const PanelShadow = ({ value, onChange = () => {}, label }) => {
   const shadow = value || '0px 0px 0px 0px #000000 inset';

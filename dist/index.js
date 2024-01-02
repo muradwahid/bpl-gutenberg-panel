@@ -75,16 +75,16 @@ Object.defineProperty(exports, "TinyEditor", {
     return _TinyEditor["default"];
   }
 });
-var _Device = _interopRequireDefault(require("./Device/Device"));
-var _DynamicTag = _interopRequireDefault(require("./DynamicTag/DynamicTag"));
-var _PanelAlign = _interopRequireDefault(require("./PanelAlign/PanelAlign"));
-var _PanelColorControl = _interopRequireDefault(require("./PanelColorControl/PanelColorControl"));
-var _PanelColorPicker = _interopRequireDefault(require("./PanelColorPicker/PanelColorPicker"));
-var _PanelCustomColorControl = _interopRequireDefault(require("./PanelCustomColorControl/PanelCustomColorControl"));
-var _PanelGradientPicker = _interopRequireDefault(require("./PanelGradientPicker/PanelGradientPicker"));
-var _PanelRepeater = _interopRequireDefault(require("./PanelRepeater/PanelRepeater"));
-var _PanelShadow = _interopRequireDefault(require("./PanelShadow/PanelShadow"));
-var _Tab = _interopRequireDefault(require("./Tab/Tab"));
-var _TabPanel = _interopRequireDefault(require("./TabPanel/TabPanel"));
-var _TinyEditor = _interopRequireDefault(require("./TinyEditor/TinyEditor"));
+var _Device = _interopRequireDefault(require("./Device/Device.mjs"));
+var _DynamicTag = _interopRequireDefault(require("./DynamicTag/DynamicTag.mjs"));
+var _PanelAlign = _interopRequireDefault(require("./PanelAlign/PanelAlign.mjs"));
+var _PanelColorControl = _interopRequireDefault(require("./PanelColorControl/PanelColorControl.mjs"));
+var _PanelColorPicker = _interopRequireDefault(require("./PanelColorPicker/PanelColorPicker.mjs"));
+var _PanelCustomColorControl = _interopRequireDefault(require("./PanelCustomColorControl/PanelCustomColorControl.mjs"));
+var _PanelGradientPicker = _interopRequireDefault(require("./PanelGradientPicker/PanelGradientPicker.mjs"));
+var _PanelRepeater = _interopRequireDefault(require("./PanelRepeater/PanelRepeater.mjs"));
+var _PanelShadow = _interopRequireDefault(require("./PanelShadow/PanelShadow.mjs"));
+var _Tab = _interopRequireDefault(require("./Tab/Tab.mjs"));
+var _TabPanel = _interopRequireDefault(require("./TabPanel/TabPanel.mjs"));
+var _TinyEditor = _interopRequireDefault(require("./TinyEditor/TinyEditor.mjs"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

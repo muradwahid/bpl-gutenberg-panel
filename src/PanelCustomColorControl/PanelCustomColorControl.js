@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Dropdown, GradientPicker } from '@wordpress/components';
 import { useState } from 'react';
-import PanelColorPicker from '../PanelColorPicker/PanelColorPicker.mjs';
+import PanelColorPicker from '../PanelColorPicker/PanelColorPicker.js';
 import './panelCustomColorControl.css';
 const PanelCustomColorControl = ({
   value,

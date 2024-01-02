@@ -4,10 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var _react = require("react");
-require("./panelCustomColorControl.css");
 var _components = require("@wordpress/components");
-var _PanelColorPicker = _interopRequireDefault(require("../PanelColorPicker/PanelColorPicker"));
+var _react = require("react");
+var _PanelColorPicker = _interopRequireDefault(require("../PanelColorPicker/PanelColorPicker.mjs"));
+require("./panelCustomColorControl.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
