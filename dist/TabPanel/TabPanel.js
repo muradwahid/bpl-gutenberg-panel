@@ -7,7 +7,7 @@ exports["default"] = void 0;
 var _components = require("@wordpress/components");
 var _react = _interopRequireDefault(require("react"));
 var _fa = require("react-icons/fa6");
-require("./tabpanel.scss");
+require("./tabpanel.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var TabPanel = function TabPanel(_ref) {
   var tab = _ref.tab,

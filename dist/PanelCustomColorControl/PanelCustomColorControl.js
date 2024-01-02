@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _react = require("react");
-require("./panelCustomColorControl.scss");
-var _PanelColorPicker = _interopRequireDefault(require("../PanelColorPicker/PanelColorPicker"));
+require("./panelCustomColorControl.css");
 var _components = require("@wordpress/components");
+var _PanelColorPicker = _interopRequireDefault(require("../PanelColorPicker/PanelColorPicker"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -27,9 +27,9 @@ var PanelCustomColorControl = function PanelCustomColorControl(_ref) {
     setTab = _useState2[1];
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between"
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between'
     }
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", null, label)), /*#__PURE__*/React.createElement(_components.Dropdown, {
     className: "my-container-class-name",
@@ -40,7 +40,7 @@ var PanelCustomColorControl = function PanelCustomColorControl(_ref) {
         onClose = _ref2.onClose;
       return /*#__PURE__*/React.createElement("span", {
         style: {
-          cursor: "pointer"
+          cursor: 'pointer'
         },
         onClick: onToggle,
         "aria-expanded": isOpen,
@@ -91,7 +91,7 @@ var PanelCustomColorControl = function PanelCustomColorControl(_ref) {
           marginTop: '10px'
         }
       }, /*#__PURE__*/React.createElement(_components.GradientPicker, {
-        value: '#f00',
+        value: 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)',
         onChange: function onChange(value) {
           return _onChange(value);
         },

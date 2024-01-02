@@ -1,10 +1,14 @@
 /* eslint-disable no-unused-vars */
-import {useState} from 'react';
-import './panelCustomColorControl.css';
-import PanelColorPicker from '../PanelColorPicker/PanelColorPicker';
 import { Dropdown, GradientPicker } from '@wordpress/components';
-const PanelCustomColorControl = ({value,onChange=()=>{},label='Color'}) => {
-  const [tab,setTab]=useState('solid')
+import { useState } from 'react';
+import PanelColorPicker from '../PanelColorPicker/PanelColorPicker.mjs';
+import './panelCustomColorControl.css';
+const PanelCustomColorControl = ({
+  value,
+  onChange = () => {},
+  label = 'Color',
+}) => {
+  const [tab, setTab] = useState('solid');
   return (
     <div
       style={{

@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import './device.css';
-const Device = ({ device = 'desktop', onChange = () => {},style,className}) => {
+const Device = ({
+  device = 'desktop',
+  onChange = () => {},
+  style,
+  className,
+}) => {
   const [show, setShow] = useState(false);
   const deviceValue = [
     {
@@ -11,7 +16,7 @@ const Device = ({ device = 'desktop', onChange = () => {},style,className}) => {
     { value: 'mobile', icon: 'dashicons-smartphone' },
   ];
   return (
-    <div style={style} className={className} >
+    <div style={style} className={className}>
       {!show && (
         <div style={{ display: 'flex' }}>
           <button onClick={() => setShow(true)} className="single-device">

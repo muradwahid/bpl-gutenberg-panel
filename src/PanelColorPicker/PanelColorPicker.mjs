@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { ColorPalette } from '@wordpress/components';
-import { ColorPicker, Dropdown } from '@wordpress/components';
+import { Dropdown } from '@wordpress/components';
 import React from 'react';
 
-const PanelColorPicker = ({ color, value, renderFunction, label }) => {
+const PanelColorPicker = ({ value, renderFunction, label }) => {
   return (
     <div
       style={{
@@ -32,10 +32,6 @@ const PanelColorPicker = ({ color, value, renderFunction, label }) => {
         )}
         renderContent={({ isOpen, onToggle, onClose }) => (
           <div>
-            {/* <ColorPicker
-              color={color || '#ccc'}
-              onChange={(value) => renderFunction(value)}
-            /> */}
             <ColorPalette
               colors={[
                 { name: 'red', color: '#f00' },

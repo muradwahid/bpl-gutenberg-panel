@@ -10,8 +10,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 /* eslint-disable no-unused-vars */
 
 var PanelColorPicker = function PanelColorPicker(_ref) {
-  var color = _ref.color,
-    value = _ref.value,
+  var value = _ref.value,
     renderFunction = _ref.renderFunction,
     label = _ref.label;
   return /*#__PURE__*/_react["default"].createElement("div", {

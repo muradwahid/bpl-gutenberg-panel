@@ -4,12 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-require("./panelAlign.scss");
+require("./panelAlign.css");
 var _ai = require("react-icons/ai");
 var PanelAlign = function PanelAlign(_ref) {
   var label = _ref.label,
     icons = _ref.icons,
-    renderFunction = _ref.renderFunction,
+    _ref$onChange = _ref.onChange,
+    onChange = _ref$onChange === void 0 ? function () {} : _ref$onChange,
     value = _ref.value;
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -31,7 +32,7 @@ var PanelAlign = function PanelAlign(_ref) {
     return /*#__PURE__*/React.createElement("div", {
       key: i,
       onClick: function onClick() {
-        return renderFunction(i + 1);
+        return onChange(i + 1);
       },
       className: "single-icon-admin-panel panelAlign ".concat(value === i + 1 ? 'isActive' : '')
     }, icon.value, /*#__PURE__*/React.createElement("div", {

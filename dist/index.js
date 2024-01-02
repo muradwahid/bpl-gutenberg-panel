@@ -3,31 +3,88 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
-var _Device = _interopRequireDefault(require("./bpl-panel/Device/Device"));
-var _DynamicTag = _interopRequireDefault(require("./bpl-panel/DynamicTag/DynamicTag"));
-var _IncludeExclude = _interopRequireDefault(require("./bpl-panel/IncludeExclude/IncludeExclude"));
-var _MediaArea = _interopRequireDefault(require("./bpl-panel/MediaArea/MediaArea"));
-var _PanelAlign = _interopRequireDefault(require("./bpl-panel/PanelAlign/PanelAlign"));
-var _PanelColorControl = _interopRequireDefault(require("./bpl-panel/PanelColorControl/PanelColorControl"));
-var _PanelColorPicker = _interopRequireDefault(require("./bpl-panel/PanelColorPicker/PanelColorPicker"));
-var _PanelCustomColorControl = _interopRequireDefault(require("./bpl-panel/PanelCustomColorControl/PanelCustomColorControl"));
-var _PanelGradientPicker = _interopRequireDefault(require("./bpl-panel/PanelGradientPicker/PanelGradientPicker"));
-var _PanelShadow = _interopRequireDefault(require("./bpl-panel/PanelShadow/PanelShadow"));
-var _TabPanel = _interopRequireDefault(require("./bpl-panel/TabPanel/TabPanel"));
-var _TinyEditor = _interopRequireDefault(require("./bpl-panel/TinyEditor/TinyEditor"));
+Object.defineProperty(exports, "Device", {
+  enumerable: true,
+  get: function get() {
+    return _Device["default"];
+  }
+});
+Object.defineProperty(exports, "DynamicTag", {
+  enumerable: true,
+  get: function get() {
+    return _DynamicTag["default"];
+  }
+});
+Object.defineProperty(exports, "PanelAlign", {
+  enumerable: true,
+  get: function get() {
+    return _PanelAlign["default"];
+  }
+});
+Object.defineProperty(exports, "PanelColorControl", {
+  enumerable: true,
+  get: function get() {
+    return _PanelColorControl["default"];
+  }
+});
+Object.defineProperty(exports, "PanelColorPicker", {
+  enumerable: true,
+  get: function get() {
+    return _PanelColorPicker["default"];
+  }
+});
+Object.defineProperty(exports, "PanelCustomColorPicker", {
+  enumerable: true,
+  get: function get() {
+    return _PanelCustomColorControl["default"];
+  }
+});
+Object.defineProperty(exports, "PanelGradientPicker", {
+  enumerable: true,
+  get: function get() {
+    return _PanelGradientPicker["default"];
+  }
+});
+Object.defineProperty(exports, "PanelRepeater", {
+  enumerable: true,
+  get: function get() {
+    return _PanelRepeater["default"];
+  }
+});
+Object.defineProperty(exports, "PanelShadow", {
+  enumerable: true,
+  get: function get() {
+    return _PanelShadow["default"];
+  }
+});
+Object.defineProperty(exports, "Tab", {
+  enumerable: true,
+  get: function get() {
+    return _Tab["default"];
+  }
+});
+Object.defineProperty(exports, "TabPanel", {
+  enumerable: true,
+  get: function get() {
+    return _TabPanel["default"];
+  }
+});
+Object.defineProperty(exports, "TinyEditor", {
+  enumerable: true,
+  get: function get() {
+    return _TinyEditor["default"];
+  }
+});
+var _Device = _interopRequireDefault(require("./Device/Device"));
+var _DynamicTag = _interopRequireDefault(require("./DynamicTag/DynamicTag"));
+var _PanelAlign = _interopRequireDefault(require("./PanelAlign/PanelAlign"));
+var _PanelColorControl = _interopRequireDefault(require("./PanelColorControl/PanelColorControl"));
+var _PanelColorPicker = _interopRequireDefault(require("./PanelColorPicker/PanelColorPicker"));
+var _PanelCustomColorControl = _interopRequireDefault(require("./PanelCustomColorControl/PanelCustomColorControl"));
+var _PanelGradientPicker = _interopRequireDefault(require("./PanelGradientPicker/PanelGradientPicker"));
+var _PanelRepeater = _interopRequireDefault(require("./PanelRepeater/PanelRepeater"));
+var _PanelShadow = _interopRequireDefault(require("./PanelShadow/PanelShadow"));
+var _Tab = _interopRequireDefault(require("./Tab/Tab"));
+var _TabPanel = _interopRequireDefault(require("./TabPanel/TabPanel"));
+var _TinyEditor = _interopRequireDefault(require("./TinyEditor/TinyEditor"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var _default = exports["default"] = {
-  Device: _Device["default"],
-  DynamicTag: _DynamicTag["default"],
-  IncludeExClude: _IncludeExclude["default"],
-  MediaArea: _MediaArea["default"],
-  PanelAlign: _PanelAlign["default"],
-  PanelColorControl: _PanelColorControl["default"],
-  PanelColorPicker: _PanelColorPicker["default"],
-  PanelCustomColorControl: _PanelCustomColorControl["default"],
-  PanelGradientPicker: _PanelGradientPicker["default"],
-  PanelShadow: _PanelShadow["default"],
-  TabPanel: _TabPanel["default"],
-  TinyEditor: _TinyEditor["default"]
-};
