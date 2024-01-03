@@ -1,8 +1,8 @@
 {
   "name": "bpl-gutenberg-panel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "awesome gutenberg panel",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "npx babel src --out-dir dist"
   },
