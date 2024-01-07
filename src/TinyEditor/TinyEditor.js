@@ -3,7 +3,7 @@ import { Editor } from '@tinymce/tinymce-react';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import { useEffect, useRef, useState } from 'react';
-import './tinyEditor.css';
+import TinyEditorStyle from './TinyEditorStyle';
 const TinyEditor = ({ value, onChange = () => {}, height = 180 }) => {
   const editorRef = useRef(null);
   const [media, setMedia] = useState('');
@@ -37,6 +37,7 @@ const TinyEditor = ({ value, onChange = () => {}, height = 180 }) => {
   }, []);
   return (
     <div>
+      <TinyEditorStyle/>
       <MediaUploadCheck>
         <MediaUpload
           gallery={true}

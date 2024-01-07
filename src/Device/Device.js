@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './device.css';
+import { useState,Fragment } from 'react';
+import DeviceStyle from './deviceStyle';
 const Device = ({
   device = 'desktop',
   onChange = () => {},
@@ -16,40 +16,43 @@ const Device = ({
     { value: 'mobile', icon: 'dashicons-smartphone' },
   ];
   return (
-    <div style={style} className={className}>
-      {!show && (
-        <div style={{ display: 'flex' }}>
-          <button onClick={() => setShow(true)} className="single-device">
-            <span
-              className={`dashicons dashicons-${
-                device === 'desktop'
-                  ? 'desktop'
-                  : device === 'tablet'
-                  ? 'tablet'
-                  : 'smartphone'
-              }`}
-            ></span>
-          </button>
-        </div>
-      )}
-
-      {show && (
-        <div style={{ display: 'flex' }}>
-          {deviceValue.map(({ value, icon }, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setShow(false);
-                onChange(value);
-              }}
-              className="single-device"
-            >
-              <span className={`dashicons ${icon}`}></span>
+    <Fragment>
+      <DeviceStyle/>
+      <div style={style} className={className}>
+        {!show && (
+          <div style={{ display: 'flex' }}>
+            <button onClick={() => setShow(true)} className="single-device">
+              <span
+                className={`dashicons dashicons-${
+                  device === 'desktop'
+                    ? 'desktop'
+                    : device === 'tablet'
+                    ? 'tablet'
+                    : 'smartphone'
+                }`}
+              ></span>
             </button>
-          ))}
-        </div>
-      )}
-    </div>
+          </div>
+        )}
+
+        {show && (
+          <div style={{ display: 'flex' }}>
+            {deviceValue.map(({ value, icon }, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  setShow(false);
+                  onChange(value);
+                }}
+                className="single-device"
+              >
+                <span className={`dashicons ${icon}`}></span>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </Fragment>
   );
 };
 

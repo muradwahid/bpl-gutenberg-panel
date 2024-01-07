@@ -1,6 +1,7 @@
 import { MediaUpload } from '@wordpress/block-editor';
 import { FaRegTrashAlt } from 'react-icons/fa';
-import './mediaArea.css';
+import MediaAreaStyle from './MediaAreaStyle';
+
 const MediaArea = ({
   types= ['image'],
   image,
@@ -12,6 +13,7 @@ const MediaArea = ({
 }) => {
   return (
     <>
+      <MediaAreaStyle/>
       <div className="custom-media-area-component">
         <MediaUpload
           gallery={false}

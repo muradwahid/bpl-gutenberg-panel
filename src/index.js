@@ -1,6 +1,7 @@
 import Device from './Device/Device.js';
 import DynamicTag from './DynamicTag/DynamicTag.js';
 import PanelAlign from './PanelAlign/PanelAlign.js';
+import MediaArea from "./MediaArea/MediaArea.js"
 import PanelColorControl from './PanelColorControl/PanelColorControl.js';
 import PanelColorPicker from './PanelColorPicker/PanelColorPicker.js';
 import PanelCustomColorPicker from './PanelCustomColorControl/PanelCustomColorControl.js';
@@ -23,4 +24,5 @@ export {
   Tab,
   TabPanel,
   TinyEditor,
+  MediaArea
 };

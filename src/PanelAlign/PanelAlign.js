@@ -1,8 +1,9 @@
-import './panelAlign.css';
+import PanelAlignStyle from './PanelAlignStyle';
 import { AiOutlineCaretDown } from 'react-icons/ai';
 const PanelAlign = ({ label, icons, onChange = () => { }, value }) => {
   return (
     <div>
+      <PanelAlignStyle/>
       <div
         style={{
           width: '100%',

@@ -7,7 +7,7 @@ import {
 } from '@wordpress/components';
 import { useEffect, useState } from 'react';
 import PanelColorPicker from '../PanelColorPicker/PanelColorPicker.js';
-import './panelShadow.css';
+import PanelShadowStyle from './PanelShadowStyle.js';
 const PanelShadow = ({ value, onChange = () => {}, label }) => {
   const shadow = value || '0px 0px 0px 0px #000000 inset';
   const split = shadow.split(' ');
@@ -28,84 +28,89 @@ const PanelShadow = ({ value, onChange = () => {}, label }) => {
     );
   }, [newArr, isInset]);
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        borderRadius: '5px',
-        margin: '10px 0',
-      }}
-    >
-      <span>{label}</span>
-      <Dropdown
-        className="my-container-class-name"
-        contentClassName="my-popover-content-classname"
-        renderToggle={({ isOpen, onToggle, onClose }) => (
-          <Button icon="edit" onClick={onToggle} aria-expanded={isOpen} />
-        )}
-        renderContent={({ isOpen, onToggle, onClose }) => (
-          <div>
-            <div className="panel-shadow-container">
-              <div className="single-shadow-panel">
-                <span>HORIZONTAL OFFSET:</span>
-                <UnitControl
-                  value={arr[0]}
-                  units={['px', 'em', 'rem']}
-                  style={{ width: '110px' }}
-                  onChange={(val) => setNewArr({ ...newArr, x: val })}
-                />
+    <>
+      <PanelShadowStyle/>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          borderRadius: '5px',
+          margin: '10px 0',
+        }}
+      >
+        <span>{label}</span>
+        <Dropdown
+          className="my-container-class-name"
+          contentClassName="my-popover-content-classname"
+          renderToggle={({ isOpen, onToggle, onClose }) => (
+            <Button icon="edit" onClick={onToggle} aria-expanded={isOpen} />
+          )}
+          renderContent={({ isOpen, onToggle, onClose }) => (
+            <div>
+              <div className="panel-shadow-container">
+                <div className="single-shadow-panel">
+                  <span>HORIZONTAL OFFSET:</span>
+                  <UnitControl
+                    value={arr[0]}
+                    units={['px', 'em', 'rem']}
+                    style={{ width: '110px' }}
+                    onChange={(val) => setNewArr({ ...newArr, x: val })}
+                  />
+                </div>
+                <div className="single-shadow-panel">
+                  <span>VERTICAL OFFSET:</span>
+                  <UnitControl
+                    value={arr[1]}
+                    units={['px', 'em', 'rem']}
+                    style={{ width: '110px' }}
+                    onChange={(val) => setNewArr({ ...newArr, y: val })}
+                  />
+                </div>
+                <div className="single-shadow-panel">
+                  <span>BLUR:</span>
+                  <UnitControl
+                    value={arr[2]}
+                    units={['px', 'em', 'rem']}
+                    style={{ width: '110px' }}
+                    onChange={(val) => setNewArr({ ...newArr, blur: val })}
+                  />
+                </div>
+                <div className="single-shadow-panel">
+                  <span>SPREAD:</span>
+                  <UnitControl
+                    value={arr[3]}
+                    units={['px', 'em', 'rem']}
+                    style={{ width: '110px' }}
+                    onChange={(val) => setNewArr({ ...newArr, spread: val })}
+                  />
+                </div>
+                <div>
+                  <PanelColorPicker
+                    color={'#fff'}
+                    label="Color:"
+                    value={newArr.color}
+                    renderFunction={(val) =>
+                      setNewArr({ ...newArr, color: val })
+                    }
+                  />
+                </div>
+                <div
+                  style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+                >
+                  <ToggleControl
+                    checked={isInset}
+                    onChange={(val) => setIsInset(val)}
+                  />
+                  <span>Shadow Inset?</span>
+                </div>
               </div>
-              <div className="single-shadow-panel">
-                <span>VERTICAL OFFSET:</span>
-                <UnitControl
-                  value={arr[1]}
-                  units={['px', 'em', 'rem']}
-                  style={{ width: '110px' }}
-                  onChange={(val) => setNewArr({ ...newArr, y: val })}
-                />
-              </div>
-              <div className="single-shadow-panel">
-                <span>BLUR:</span>
-                <UnitControl
-                  value={arr[2]}
-                  units={['px', 'em', 'rem']}
-                  style={{ width: '110px' }}
-                  onChange={(val) => setNewArr({ ...newArr, blur: val })}
-                />
-              </div>
-              <div className="single-shadow-panel">
-                <span>SPREAD:</span>
-                <UnitControl
-                  value={arr[3]}
-                  units={['px', 'em', 'rem']}
-                  style={{ width: '110px' }}
-                  onChange={(val) => setNewArr({ ...newArr, spread: val })}
-                />
-              </div>
-              <div>
-                <PanelColorPicker
-                  color={'#fff'}
-                  label="Color:"
-                  value={newArr.color}
-                  renderFunction={(val) => setNewArr({ ...newArr, color: val })}
-                />
-              </div>
-              <div
-                style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
-              >
-                <ToggleControl
-                  checked={isInset}
-                  onChange={(val) => setIsInset(val)}
-                />
-                <span>Shadow Inset?</span>
-              </div>
+              <div onClick={onClose}></div>
             </div>
-            <div onClick={onClose}></div>
-          </div>
-        )}
-      />
-    </div>
+          )}
+        />
+      </div>
+    </>
   );
 };
 

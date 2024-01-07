@@ -8,6 +8,7 @@ module.exports = {
   },
   module: {
     rules: [{ test: /\.js$/, use: 'raw-loader' }],
+
   },
   plugins: [new HtmlWebpackPlugin({ template: './src/index.js' })],
 };
