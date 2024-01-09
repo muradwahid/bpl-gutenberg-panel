@@ -6,7 +6,7 @@ import {
   Dropdown,
 } from '@wordpress/components';
 import { useState } from 'react';
-const PanelColorControl = ({ label, value, colors, renderFunction }) => {
+const PanelColorControl = ({ label, value, colors, onChange = () => { } }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -51,7 +51,7 @@ const PanelColorControl = ({ label, value, colors, renderFunction }) => {
               <ColorPalette
                 colors={colors}
                 value={value}
-                onChange={(val) => renderFunction(val)}
+                onChange={(val) => onChange(val)}
               />
               <div onClick={onClose}></div>
             </div>

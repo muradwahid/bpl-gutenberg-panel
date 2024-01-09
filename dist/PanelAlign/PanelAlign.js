@@ -4,25 +4,34 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var _PanelAlignStyle = _interopRequireDefault(require("./PanelAlignStyle"));
 var _ai = require("react-icons/ai");
+var _PanelAlignStyle = _interopRequireDefault(require("./PanelAlignStyle"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var PanelAlign = function PanelAlign(_ref) {
   var label = _ref.label,
     icons = _ref.icons,
     _ref$onChange = _ref.onChange,
     onChange = _ref$onChange === void 0 ? function () {} : _ref$onChange,
-    value = _ref.value;
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_PanelAlignStyle["default"], null), /*#__PURE__*/React.createElement("div", {
+    value = _ref.value,
+    style = _ref.style,
+    _ref$labelPosition = _ref.labelPosition,
+    labelPosition = _ref$labelPosition === void 0 ? 'left' : _ref$labelPosition;
+  var labelAlign = labelPosition == 'left' || labelPosition == 'right';
+  return /*#__PURE__*/React.createElement("div", {
+    style: style
+  }, /*#__PURE__*/React.createElement(_PanelAlignStyle["default"], null), /*#__PURE__*/React.createElement("div", {
     style: {
       width: '100%',
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center'
+      alignItems: "".concat(labelAlign ? 'center' : 'normal'),
+      flexDirection: "".concat(labelPosition === 'left' ? 'row' : labelPosition == 'right' ? 'row-reverse' : labelPosition === 'top' ? 'column' : 'column-reverse')
     }
   }, /*#__PURE__*/React.createElement("p", {
     style: {
-      margin: '0'
+      margin: "".concat(labelAlign ? '0' : '8px 0'),
+      fontSize: '14px',
+      fontWeight: 400
     }
   }, label), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -33,9 +42,9 @@ var PanelAlign = function PanelAlign(_ref) {
     return /*#__PURE__*/React.createElement("div", {
       key: i,
       onClick: function onClick() {
-        return onChange(i + 1);
+        return onChange(icon.label.toLowerCase());
       },
-      className: "single-icon-admin-panel panelAlign ".concat(value === i + 1 ? 'isActive' : '')
+      className: "single-icon-admin-panel panelAlign ".concat(value === icon.label.toLowerCase() ? 'isActive' : '')
     }, icon.value, /*#__PURE__*/React.createElement("div", {
       className: "icon-picker-tooltip-container"
     }, /*#__PURE__*/React.createElement("div", {

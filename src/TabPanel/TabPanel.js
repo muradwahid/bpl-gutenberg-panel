@@ -2,15 +2,15 @@ import { Dashicon } from '@wordpress/components';
 import React from 'react';
 import { FaCircleHalfStroke } from 'react-icons/fa6';
 import TabPanelStyle from './TabPanelStyle';
-const TabPanel = ({ tab, setTab }) => {
+const TabPanel = ({ value, onChange = () => { } }) => {
   return (
     <>
       <TabPanelStyle/>
       <div className="tab-panel-container">
         <div
-          onClick={() => setTab('content')}
+          onClick={() => onChange('content')}
           className={`single-tab ${
-            tab === 'content'
+            value === 'content'
               ? 'is-tab-active active-tab-color'
               : 'deActive-tab-color'
           }`}
@@ -19,9 +19,9 @@ const TabPanel = ({ tab, setTab }) => {
           <span>Content</span>
         </div>
         <div
-          onClick={() => setTab('style')}
+          onClick={() => onChange('style')}
           className={`single-tab ${
-            tab === 'style'
+            value === 'style'
               ? 'is-tab-active active-tab-color'
               : 'deActive-tab-color'
           }`}

@@ -16,7 +16,8 @@ var PanelColorControl = function PanelColorControl(_ref) {
   var label = _ref.label,
     value = _ref.value,
     colors = _ref.colors,
-    renderFunction = _ref.renderFunction;
+    _ref$onChange = _ref.onChange,
+    _onChange = _ref$onChange === void 0 ? function () {} : _ref$onChange;
   var _useState = (0, _react.useState)(false),
     _useState2 = _slicedToArray(_useState, 2),
     isOpen = _useState2[0],
@@ -71,7 +72,7 @@ var PanelColorControl = function PanelColorControl(_ref) {
         colors: colors,
         value: value,
         onChange: function onChange(val) {
-          return renderFunction(val);
+          return _onChange(val);
         }
       }), /*#__PURE__*/React.createElement("div", {
         onClick: onClose

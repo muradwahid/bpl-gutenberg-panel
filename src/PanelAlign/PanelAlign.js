@@ -1,18 +1,43 @@
-import PanelAlignStyle from './PanelAlignStyle';
 import { AiOutlineCaretDown } from 'react-icons/ai';
-const PanelAlign = ({ label, icons, onChange = () => { }, value }) => {
+import PanelAlignStyle from "./PanelAlignStyle"
+const PanelAlign = ({
+  label,
+  icons,
+  onChange = () => { },
+  value,
+  style,
+  labelPosition = 'left',
+}) => {
+  const labelAlign = labelPosition == 'left' || labelPosition == 'right';
   return (
-    <div>
-      <PanelAlignStyle/>
+    <div style={style}>
+      <PanelAlignStyle />
       <div
         style={{
           width: '100%',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: `${labelAlign ? 'center' : 'normal'}`,
+          flexDirection: `${labelPosition === 'left'
+            ? 'row'
+            : labelPosition == 'right'
+              ? 'row-reverse'
+              : labelPosition === 'top'
+                ? 'column'
+                : 'column-reverse'
+            }`,
         }}
       >
-        <p style={{ margin: '0' }}>{label}</p>
+        <p
+          style={{
+            margin: `${labelAlign ? '0' : '8px 0'}`,
+            fontSize: '14px',
+            fontWeight: 400,
+
+          }}
+        >
+          {label}
+        </p>
         <div
           style={{
             display: 'flex',
@@ -23,10 +48,9 @@ const PanelAlign = ({ label, icons, onChange = () => { }, value }) => {
             icons.map((icon, i) => (
               <div
                 key={i}
-                onClick={() => onChange(i + 1)}
-                className={`single-icon-admin-panel panelAlign ${
-                  value === i + 1 ? 'isActive' : ''
-                }`}
+                onClick={() => onChange(icon.label.toLowerCase())}
+                className={`single-icon-admin-panel panelAlign ${value === icon.label.toLowerCase() ? 'isActive' : ''
+                  }`}
               >
                 {icon.value}
                 <div className="icon-picker-tooltip-container">

@@ -68,7 +68,7 @@ const PanelCustomColorControl = ({
                     color="#00FFFF"
                     value={value}
                     label="Color :"
-                    renderFunction={(value) => onChange(value)}
+                    onChange={(value) => onChange(value)}
                   />
                 </div>
               )}

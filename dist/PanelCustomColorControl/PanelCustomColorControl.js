@@ -83,7 +83,7 @@ var PanelCustomColorControl = function PanelCustomColorControl(_ref) {
         color: "#00FFFF",
         value: value,
         label: "Color :",
-        renderFunction: function renderFunction(value) {
+        onChange: function onChange(value) {
           return _onChange(value);
         }
       })), tab === 'gradient' && /*#__PURE__*/React.createElement("div", {

@@ -3,7 +3,7 @@ import { ColorPalette } from '@wordpress/components';
 import { Dropdown } from '@wordpress/components';
 import React from 'react';
 
-const PanelColorPicker = ({ value, renderFunction, label }) => {
+const PanelColorPicker = ({ value, onChange = () => { }, label }) => {
   return (
     <div
       style={{
@@ -39,7 +39,7 @@ const PanelColorPicker = ({ value, renderFunction, label }) => {
                 { name: 'blue', color: '#00f' },
               ]}
               value={value}
-              onChange={(value) => renderFunction(value)}
+              onChange={(value) => onChange(value)}
             />
             <div onClick={onClose}></div>
           </div>

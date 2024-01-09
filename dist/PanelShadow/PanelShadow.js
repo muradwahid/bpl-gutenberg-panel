@@ -129,7 +129,7 @@ var PanelShadow = function PanelShadow(_ref) {
         color: '#fff',
         label: "Color:",
         value: newArr.color,
-        renderFunction: function renderFunction(val) {
+        onChange: function onChange(val) {
           return setNewArr(_objectSpread(_objectSpread({}, newArr), {}, {
             color: val
           }));

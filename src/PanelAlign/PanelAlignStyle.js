@@ -50,6 +50,7 @@ const PanelAlignStyle = () => {
 
 .icon-picker-tooltip>span {
   color: white;
+  text-transform:capitalize;
 }
 
 .icon-picker-tooltip>svg {

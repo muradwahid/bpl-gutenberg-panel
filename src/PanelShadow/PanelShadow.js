@@ -90,7 +90,7 @@ const PanelShadow = ({ value, onChange = () => {}, label }) => {
                     color={'#fff'}
                     label="Color:"
                     value={newArr.color}
-                    renderFunction={(val) =>
+                    onChange={(val) =>
                       setNewArr({ ...newArr, color: val })
                     }
                   />

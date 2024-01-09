@@ -11,7 +11,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var PanelColorPicker = function PanelColorPicker(_ref) {
   var value = _ref.value,
-    renderFunction = _ref.renderFunction,
+    _ref$onChange = _ref.onChange,
+    _onChange = _ref$onChange === void 0 ? function () {} : _ref$onChange,
     label = _ref.label;
   return /*#__PURE__*/_react["default"].createElement("div", {
     style: {
@@ -56,7 +57,7 @@ var PanelColorPicker = function PanelColorPicker(_ref) {
         }],
         value: value,
         onChange: function onChange(value) {
-          return renderFunction(value);
+          return _onChange(value);
         }
       }), /*#__PURE__*/_react["default"].createElement("div", {
         onClick: onClose
