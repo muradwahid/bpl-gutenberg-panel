@@ -1,31 +1,46 @@
-export default {
+module.exports = {
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   'env': {
     'browser': true,
-    'es2021': true,
+    'commonjs': true,
+    'es6': true,
+    'node': true
   },
   'extends': [
-    'google',
-    'plugin:react/recommended',
+    'eslint:recommended',
+    'plugin:react/recommended'
   ],
-  'overrides': [
-    {
-      'env': {
-        'node': true,
-      },
-      'files': [
-        '.eslintrc.{js,cjs}',
-      ],
-      'parserOptions': {
-        'sourceType': 'script',
-      },
-    },
-  ],
+  'globals': {
+    'wp': 'readonly',
+    'jQuery': 'readonly'
+  },
   'parserOptions': {
-    'ecmaVersion': 'latest',
+    'ecmaFeatures': {
+      'jsx': true
+    },
+    'ecmaVersion': 12,
+    'sourceType': 'module'
   },
   'plugins': [
-    'react',
+    'react'
   ],
   'rules': {
-  },
+    'func-names': 'off',
+    'no-console': 'warn',
+    'no-unused-vars': 'warn',
+    'react/jsx-filename-extension': [
+      1, { 'extensions': ['.js', '.jsx'] }
+    ],
+    'react/prop-types': 'off',
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
+    'no-process-exit': 'off',
+    'no-unsafe-optional-chaining': 'off',
+    'object-shorthand': 'warn',
+    'class-methods-use-this': 'off',
+  }
 };

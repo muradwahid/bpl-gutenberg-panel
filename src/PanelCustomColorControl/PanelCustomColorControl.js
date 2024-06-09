@@ -1,17 +1,59 @@
 /* eslint-disable no-unused-vars */
-import { Dropdown, GradientPicker } from '@wordpress/components';
-import { useState } from 'react';
-import PanelColorPicker from '../PanelColorPicker/PanelColorPicker.js';
-import PanelCustomColorControlStyle from './PanelCustomColorControlStyle.js';
-const PanelCustomColorControl = ({
-  value,
-  onChange = () => {},
-  label = 'Color',
-}) => {
+import { Fragment, useState } from 'react';
+import { PanelColorPicker } from '../PanelColorPicker/PanelColorPicker';
+import "./panelCustomColorControl.css";
+import { Button, Dropdown, GradientPicker } from '@wordpress/components';
+import {  } from "@wordpress/block-editor"
+import { BButtonGroup } from '../BButtonGroup/BButtonGroup';
+import { useSelect } from '@wordpress/data';
+/**
+ * PanelCustomColorControl Component
+ * 
+ * @param {object} props - The props object
+ * @param {string} props.value - The value of the custom color control panel
+ * @param {function} props.onChange - The function to handle changes in the custom color control panel value
+ * @param {string} props.label - The label for the custom color control panel
+ * @returns {JSX.Element} React component
+ */
+
+export const PanelCustomColorControl = (props) => {
+  const {
+    value,
+    onChange = () => { },
+    label = 'Color',
+  } = props;
+  const themeColors = useSelect('core/block-editor').getSettings().gradients
   const [tab, setTab] = useState('solid');
+  const id = Math.floor(Math.random() * 9999999);
+  const gradientValue = "linear-gradient(to bottom, #D8613C 0%, #F9F9F9 100%)";
   return (
-    <>
-      <PanelCustomColorControlStyle/>
+    <div>
+      <style>
+        {`
+        #customColorControlPanel-${id}-dualColor{
+          ${value ? `background: ${value}` : `
+          background-image: linear-gradient(
+            45deg,
+            #d5d8dc 25%,
+            transparent 0,
+            transparent 75%,
+            #d5d8dc 0,
+            #d5d8dc
+          ),
+          linear-gradient(
+            45deg,
+            #d5d8dc 25%,
+            transparent 0,
+            transparent 75%,
+            #d5d8dc 0,
+            #d5d8dc
+          );
+          background-size: 16px 16px;
+          background-position: 0 0, calc(16px / 2) calc(16px / 2);
+          `}
+        }
+        `}
+      </style>
       <div
         style={{
           display: 'flex',
@@ -26,16 +68,25 @@ const PanelCustomColorControl = ({
           className="my-container-class-name"
           contentClassName="my-popover-content-classname"
           renderToggle={({ isOpen, onToggle, onClose }) => (
-            <span
-              style={{ cursor: 'pointer' }}
-              onClick={onToggle}
-              aria-expanded={isOpen}
-              className="dashicons dashicons-edit"
-            ></span>
+            <div
+              style={{ display: "flex", alignItems: "center", gap: "5px" }}
+            >
+              <div id={`customColorControlPanel-${id}-dualColor`}
+                style={{
+                  height: '25px',
+                  width: '25px',
+                  borderRadius: '50%',
+                  border: '1px solid #ccc',
+                }}>
+
+              </div>
+              <Button onClick={onToggle}
+                aria-expanded={isOpen} icon="edit" />
+            </div>
           )}
           renderContent={({ isOpen, onToggle, onClose }) => (
             <div className="panel-custom-color-control-container">
-              <div
+              {/* <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -45,27 +96,26 @@ const PanelCustomColorControl = ({
                 <p style={{ marginBottom: '0px' }}>Type:</p>
                 <div className="panel-custom-tab">
                   <div
-                    className={`custom-single-tab ${
-                      tab === 'solid' ? 'active' : ''
-                    }`}
+                    className={`custom-single-tab ${tab === 'solid' ? 'active' : ''
+                      }`}
                     onClick={() => setTab('solid')}
                   >
                     Solid
                   </div>
                   <div
-                    className={`custom-single-tab ${
-                      tab === 'gradient' ? 'active' : ''
-                    }`}
+                    className={`custom-single-tab ${tab === 'gradient' ? 'active' : ''
+                      }`}
                     onClick={() => setTab('gradient')}
                   >
                     Gradient
                   </div>
                 </div>
-              </div>
+                
+              </div> */}
+              <BButtonGroup label="Type:" options={[{ label: "Solid", value: "solid" }, { label: "Gradient", value: "gradient" }]} value={tab} onChange={(val) => setTab(val)} />
               {tab === 'solid' && (
                 <div style={{ marginTop: '20px' }}>
                   <PanelColorPicker
-                    color="#00FFFF"
                     value={value}
                     label="Color :"
                     onChange={(value) => onChange(value)}
@@ -75,48 +125,10 @@ const PanelCustomColorControl = ({
               {tab === 'gradient' && (
                 <div style={{ marginTop: '10px' }}>
                   <GradientPicker
-                    value={
-                      'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)'
-                    }
+                    value={value || gradientValue}
                     onChange={(value) => onChange(value)}
-                    gradients={[
-                      {
-                        name: 'Vivid cyan blue to vivid purple',
-                        gradient:
-                          'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)',
-                        slug: 'vivid-cyan-blue-to-vivid-purple',
-                      },
-                      {
-                        name: 'Light green cyan to vivid green cyan',
-                        gradient:
-                          'linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)',
-                        slug: 'light-green-cyan-to-vivid-green-cyan',
-                      },
-                      {
-                        name: 'Luminous vivid amber to luminous vivid orange',
-                        gradient:
-                          'linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%)',
-                        slug: 'luminous-vivid-amber-to-luminous-vivid-orange',
-                      },
-                      {
-                        name: 'Luminous vivid orange to vivid red',
-                        gradient:
-                          'linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%)',
-                        slug: 'luminous-vivid-orange-to-vivid-red',
-                      },
-                      {
-                        name: 'Very light gray to cyan bluish gray',
-                        gradient:
-                          'linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)',
-                        slug: 'very-light-gray-to-cyan-bluish-gray',
-                      },
-                      {
-                        name: 'Cool to warm spectrum',
-                        gradient:
-                          'linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)',
-                        slug: 'cool-to-warm-spectrum',
-                      },
-                    ]}
+                    gradients={themeColors}
+
                   />
                 </div>
               )}
@@ -125,8 +137,6 @@ const PanelCustomColorControl = ({
           )}
         />
       </div>
-    </>
+    </div>
   );
 };
-
-export default PanelCustomColorControl;

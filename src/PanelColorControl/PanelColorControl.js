@@ -1,15 +1,28 @@
 /* eslint-disable no-unused-vars */
-import {
-  Button,
+import { useState } from 'react';
+import {  Button,
   ColorPalette,
   Dashicon,
-  Dropdown,
-} from '@wordpress/components';
-import { useState } from 'react';
-const PanelColorControl = ({ label, value, colors, onChange = () => { } }) => {
+  Dropdown
+} from "@wordpress/components";
+  /**
+ * PanelColorControl Component
+ * 
+ * @param {object} props - The props object
+ * @param {string} props.label - The label for the color control panel
+ * @param {string} props.value - The value of the color control panel
+ * @param {array} props.colors - The array of colors for the color control panel
+ * @param {function} props.onChange - The function to handle changes in the color control panel value
+ * @param {object} props.style - The style object for the color control panel
+ * @param {string} props.className - The class name for the color control panel
+ * @returns {JSX.Element} React component
+ */
+
+export const PanelColorControl = (props) => {
+  const { label, value, colors, onChange = () => { }, style,className } = props;
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
+    <div className={className} style={style}>
       <style>
         {`
           .custom-color-palette-style{
@@ -61,5 +74,3 @@ const PanelColorControl = ({ label, value, colors, onChange = () => { } }) => {
     </div>
   );
 };
-
-export default PanelColorControl;

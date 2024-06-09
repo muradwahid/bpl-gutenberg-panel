@@ -1,45 +1,42 @@
 {
   "name": "bpl-gutenberg-panel",
-  "version": "1.1.0",
-  "description": "awesome gutenberg panel",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "npx babel src --out-dir dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/muradwahid/bpl-gutenberg-panel.git"
-  },
+  "version": "0.0.25",
+  "description": "",
   "keywords": [
+    "gutenberg-panel",
     "gutenberg",
     "panel"
   ],
-  "author": "Murad Wahid",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/muradwahid/bpl-gutenberg-panel/issues"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel src --out-dir dist --source-maps --copy-files"
   },
-  "homepage": "https://github.com/muradwahid/bpl-gutenberg-panel#readme",
-  "dependencies": {
-    "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.23.6",
-    "@babel/preset-env": "^7.23.6",
-    "@babel/preset-react": "^7.23.3",
-    "@tinymce/tinymce-react": "^4.3.2",
-    "css-loader": "^6.8.1",
-    "immer": "^10.0.3",
-    "postcss-loader": "^7.3.3",
-    "react-icons": "^4.12.0",
-    "react-inlinesvg": "^4.1.0",
-    "sass-loader": "^13.3.2",
-    "webpack-cli": "^5.1.4"
-  },
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
-    "@wordpress/block-editor": "^12.16.0",
-    "@wordpress/components": "^25.14.0",
-    "eslint": "^8.56.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-react": "^7.33.2",
-    "webpack": "^5.89.0"
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-react": "^7.23.3",
+    "@wordpress/block-editor": "^12.17.0",
+    "@wordpress/blocks": "^12.26.0",
+    "@wordpress/components": "^25.15.0"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-react": "^4.3.2",
+    "eslint": "^9.4.0",
+    "immer": "^10.1.1",
+    "react-ace": "^11.0.1",
+    "react-sortablejs": "^6.1.4",
+    "sortablejs": "^1.15.2"
+  },
+  "peerDependencies": {
+    "@tinymce/tinymce-react": "^4.3.2",
+    "immer": "^10.1.1",
+    "react-ace": "^11.0.1",
+    "react-sortablejs": "^6.1.4",
+    "sortablejs": "^1.15.2"
   }
 }
