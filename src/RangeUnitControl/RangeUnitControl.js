@@ -14,7 +14,7 @@ import React, { Fragment, useEffect, useRef, useState } from "react";
  * @param {function} props.onChange - The function to handle changes in the range unit control value
  * @returns {JSX.Element} React component
  */
-const RangeUnitControl = (props) => {
+export const RangeUnitControl = (props) => {
   const {
     label,
     units,
@@ -173,4 +173,3 @@ const RangeUnitControl = (props) => {
   );
 };
 
-export default RangeUnitControl;

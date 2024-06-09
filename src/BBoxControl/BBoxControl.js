@@ -37,7 +37,7 @@ export const BBoxControl = (props) => {
     }
     return isReset
   })
-  const isReset = resetValues && resetOption.includes(false) && Object.keys(values)?.length>0;
+  const isReset = resetValues && resetOption.includes(false) && Object.keys(values)?.length > 0;
   const defaultUnits = [
     { label: "px", value: "px" },
     { label: "%", value: "%" },
@@ -67,8 +67,6 @@ export const BBoxControl = (props) => {
     <div style={{ marginBottom: "8px", ...style }} className={className}>
       <style>
         {`
-
-
         .bplUnitControlWrapper .components-base-control.components-input-control.components-number-control{
           margin-bottom:0px !important;
         }

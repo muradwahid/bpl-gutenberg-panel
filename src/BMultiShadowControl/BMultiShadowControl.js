@@ -19,15 +19,15 @@ import { __ } from "@wordpress/i18n";
 import { produce } from "immer";
 import { useState } from "react";
 
-import { emUnit, pxUnit, remUnit } from "../../utils/options";
+import { emUnit, pxUnit, remUnit } from "../utils/options";
 // import { BColor, BtnGroup, Label } from "../index";
 // import { gearIcon } from "../utils/icons";
-import { gearIcon } from "../../utils/icons";
+import { gearIcon } from "../utils/icons";
 import { BButtonGroup } from "../BButtonGroup/BButtonGroup";
 import Label from "../Label/Label";
 import { PanelColorPicker } from "../PanelColorPicker/PanelColorPicker";
 import "./style.css";
-const BMultiShadowControl = (props) => {
+export const BMultiShadowControl = (props) => {
   const {
     className = "",
     label = __("Shadow", "bplugins"),
@@ -254,4 +254,3 @@ const BMultiShadowControl = (props) => {
     </PanelRow>
   );
 };
-export default BMultiShadowControl;

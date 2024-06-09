@@ -17,7 +17,7 @@ import "ace-builds/src-noconflict/theme-monokai";
  * @returns {JSX.Element} React component
  */
 
-const CustomCodeEditor = (props) => {
+export const CustomCodeEditor = (props) => {
   const {
     value,
     onChange,
@@ -65,4 +65,3 @@ const CustomCodeEditor = (props) => {
   );
 };
 
-export default CustomCodeEditor;

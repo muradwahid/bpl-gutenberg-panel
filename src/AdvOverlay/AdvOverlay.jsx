@@ -32,23 +32,23 @@ const blendOptions = [
  */
 
 
-const AdvOverlay = (props) => {
-  const { value, onChange, device } = props;
+export const AdvOverlay = (props) => {
+  const { value, onChange } = props;
   const [overlay, setOverlay] = useState(value || {
-    isEnabled:false,
-    colors:advBgOptions,
-    opacity:1,
-    blend:"normal",
-    isCssFilter:false,
-    blur:0,
-    brightness:100,
-    contrast:100,
-    saturation:100,
-    hue:0,
+    isEnabled: false,
+    colors: advBgOptions,
+    opacity: 1,
+    blend: "normal",
+    isCssFilter: false,
+    blur: 0,
+    brightness: 100,
+    contrast: 100,
+    saturation: 100,
+    hue: 0,
   });
   // let overlay = value || { colors, opacity, blend };
   const {
-    isEnabled=false,
+    isEnabled = false,
     colors = advBgOptions,
     opacity = 1,
     blend = "normal",
@@ -71,7 +71,7 @@ const AdvOverlay = (props) => {
     onChange(newBG);
   };
   return (
-    <Fragment>
+    <div>
       <div className="advExtraMargin">
         <ToggleControl
           label="Enable Overlay"
@@ -85,7 +85,6 @@ const AdvOverlay = (props) => {
           <AdvBackground
             name="Overlay"
             value={colors}
-            device={device}
             onChange={(val) => updateOverlay("colors", val)}
           />
           <hr />
@@ -167,8 +166,7 @@ const AdvOverlay = (props) => {
           )}
         </Fragment>
       )}
-    </Fragment>
+    </div>
   );
 };
 
-export default AdvOverlay;

@@ -16,10 +16,10 @@ import {
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import Label from "../Label/Label";
-import { borderStyles, emUnit, perUnit, pxUnit, remUnit, sides } from "../../utils/options";
+import { borderStyles, emUnit, perUnit, pxUnit, remUnit, sides } from "../utils/options";
 import { PanelColorPicker } from "../PanelColorPicker/PanelColorPicker";
 
-const BorderControl = (props) => {
+export const BorderControl = (props) => {
   const {
     className = "",
     label = __("Border:", "bplugins"),
@@ -126,4 +126,3 @@ const BorderControl = (props) => {
     </PanelRow>
   );
 };
-export default BorderControl;

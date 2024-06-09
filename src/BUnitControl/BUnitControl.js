@@ -17,7 +17,7 @@ import "./unitControl.css";
  */
 
 
-const BUnitControl = (props) => {
+export const BUnitControl = (props) => {
   const {
     label,
     units,
@@ -109,4 +109,3 @@ const BUnitControl = (props) => {
   );
 };
 
-export default BUnitControl;
