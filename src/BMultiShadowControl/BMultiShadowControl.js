@@ -1,12 +1,3 @@
-/**
- * @props className (optional): 'mt20' (String)
- * @props label: 'Shadow' (String)
- * @props value: [{hOffset, vOffset, blur, spreed, color, isInset}] (Array)
- * @props onChange: (Function)
- * @props defaults (optional): [{hOffset, vOffset, blur, spreed, color, isInset}] (Array)
- * @return Shadow Properties (Array)
- */
-
 import {
   Button,
   Dashicon,

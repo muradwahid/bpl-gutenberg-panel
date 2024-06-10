@@ -5,18 +5,6 @@ import {  Button,
   Dashicon,
   Dropdown
 } from "@wordpress/components";
-  /**
- * PanelColorControl Component
- * 
- * @param {object} props - The props object
- * @param {string} props.label - The label for the color control panel
- * @param {string} props.value - The value of the color control panel
- * @param {array} props.colors - The array of colors for the color control panel
- * @param {function} props.onChange - The function to handle changes in the color control panel value
- * @param {object} props.style - The style object for the color control panel
- * @param {string} props.className - The class name for the color control panel
- * @returns {JSX.Element} React component
- */
 
 export const PanelColorControl = (props) => {
   const { label, value, colors, onChange = () => { }, style,className } = props;

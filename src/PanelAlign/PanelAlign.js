@@ -1,23 +1,9 @@
 import './panelAlign.css';
 
-/**
- * PanelAlign Component
- * 
- * @param {object} props - The props object
- * @param {string} props.label - The label for the panel align
- * @param {array} props.icons - The array of icons for panel align
- * @param {function} props.onChange - The function to handle changes in the panel align value
- * @param {string} props.value - The value of the panel align
- * @param {object} props.style - The style object for the panel align
- * @param {(left | right | top | bottom)} props.labelPosition - The position of the label
- * @param {string} props.className - The class name for the panel align
- * @returns {JSX.Element} React component
- */
-
 export const PanelAlign = (props) => {
   const {
     label,
-    icons,
+    options,
     onChange = () => { },
     value,
     style,
@@ -59,15 +45,15 @@ export const PanelAlign = (props) => {
             border: '1px solid #ccc',
           }}
         >
-          {icons &&
-            icons.map((icon, i) => (
+          {options &&
+            options.map((icon, i) => (
               <div
                 key={i}
                 onClick={() => onChange(icon.label.toLowerCase())}
                 className={`single-icon-admin-panel panelAlign ${value === icon.label.toLowerCase() ? 'isActive' : ''
                   }`}
               >
-                {icon.value}
+                {icon.icon}
                 <div className="icon-picker-tooltip-container">
                   <div
                     style={{ padding: '2px 6px' }}

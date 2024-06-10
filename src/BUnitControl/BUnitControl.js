@@ -1,22 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./unitControl.css";
 
-
-/**
- * BUnitControl Component
- * 
- * @param {object} props - The props object
- * @param {string} props.label - The label for the unit control
- * @param {array} props.units - The units available for selection
- * @param {string} props.className - The class name for the unit control
- * @param {object} props.style - The style object for the unit control
- * @param {string} props.value - The value of the unit control
- * @param {function} props.onChange - The function to handle changes in the unit control value
- * @param {string} props.labelPosition - The position of the label
- * @returns {JSX.Element} React component
- */
-
-
 export const BUnitControl = (props) => {
   const {
     label,

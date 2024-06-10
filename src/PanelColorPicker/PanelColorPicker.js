@@ -3,20 +3,6 @@ import { ColorPalette, Dropdown, Tooltip } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import React from 'react';
 
-/**
- * PanelColorPicker component.
- *
- * @component
- * @param {Object} props
- * @param {String} [props.label] - Optional
- * @param {String} [props.value] -Optional
- * @param {Array} [props.colors] - Optional
- * @param {object} [props.style] - Optional
- * @param {Function} [props.onChange=() => {}]  -Optional
- * @param {JSX.Element} [props.children] - Optional
- * @returns {JSX.Element}
- */
-
 export const PanelColorPicker = ((props) => {
   const { value, onChange = () => { }, label, colors, tooltip, children,style } = props;
   const id = Math.floor(Math.random() * 99999999);

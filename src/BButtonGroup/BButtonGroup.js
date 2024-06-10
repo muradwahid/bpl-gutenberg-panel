@@ -1,26 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-/**
- * BButtonGroup Component
- * 
- * @param {object} props - The props object
- * @param {array} props.options - The options for the button group
- * @param {string} props.label - The label for the button group
- * @param {string} props.value - The value of the button group
- * @param {function} props.onChange - The function to handle changes in the button group value
- * @param {string} props.borderRadius - The border radius for the button group
- * @param {string} props.height - The height of the button group
- * @param {string} props.paddingX - The horizontal padding for the buttons
- * @param {string} props.paddingY - The vertical padding for the buttons
- * @param {string} props.fontSize - The font size for the buttons
- * @param {number} props.fontWeight - The font weight for the buttons
- * @param {string} props.activeBg - The background color for the active button
- * @param {string} props.activeColor - The text color for the active button
- * @param {string} props.inactiveColor - The text color for the inactive buttons
- * @param {string} props.hoverBg - The background color for the buttons on hover
- * @param {string} props.hoverColor - The text color for the buttons on hover
- * @param {object} props.style - The style object for the button group
- * @returns {JSX.Element} React component
- */
 
 export const BButtonGroup = (props) => {
   const {

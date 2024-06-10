@@ -1,19 +1,6 @@
 import { RangeControl } from "@wordpress/components";
 import React, { Fragment, useEffect, useRef, useState } from "react";
-/**
- * RangeUnitControl Component
- * 
- * @param {object} props - The props object
- * @param {string} props.label - The label for the range unit control
- * @param {array} props.units - The units for the range unit control
- * @param {string} props.className - The class name for the range unit control
- * @param {object} props.style - The style object for the range unit control
- * @param {string} props.value - The value of the range unit control
- * @param {number} props.min - The minimum value for the range unit control
- * @param {number} props.max - The maximum value for the range unit control
- * @param {function} props.onChange - The function to handle changes in the range unit control value
- * @returns {JSX.Element} React component
- */
+
 export const RangeUnitControl = (props) => {
   const {
     label,

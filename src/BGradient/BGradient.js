@@ -12,27 +12,8 @@ import { produce } from "immer";
 import { PanelColorPicker } from "../PanelColorPicker/PanelColorPicker";
 import "./bGradientStyle.css";
 
-/**
- * BGradient Component
- *
- * @param {object} props - The props object
- * @param {object} props.value - The value of the gradient
- * @param {function} props.onChange - The function to handle changes in the gradient value
- * @returns {JSX.Element} React component
- */
-
 export const BGradient = (props) => {
   const { value, onChange } = props;
-  // const [advGradient, setAdvGradient] = useState({
-  //   type: value.type || "linear",
-  //   radialType: value.radialType || "ellipse",
-  //   colors: value.colors || [
-  //     { color: "", position: 0 },
-  //     { color: "", position: 0 },
-  //   ],
-  //   centerPositions: value.centerPositions || { x: 0, y: 0 },
-  //   angel: value.angel || 90,
-  // });
   const [advGradient, setAdvGradient] = useState(
     value || {
       type: "linear",
