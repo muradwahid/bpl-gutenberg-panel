@@ -5,8 +5,8 @@ import {
 } from "@wordpress/components";
 import { produce } from "immer";
 import { Fragment, useState } from "react";
-import { advBgOptions } from "../../utils/options";
 import { AdvBackground } from "../AdvBackground/AdvBackground";
+import { advBgOptions } from "../utils/options";
 
 const blendOptions = [
   { label: "Normal", value: "normal" },
