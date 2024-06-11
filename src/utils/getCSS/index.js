@@ -1,5 +1,5 @@
 //getBoxCss
-export const getBoxCss = (value, property) => {
+export const getBoxCSS = (value, property) => {
   if (value) {
     const result = Object.keys(value).map(
       (key) => `${property}-${key}:${value[key]};`
@@ -10,7 +10,7 @@ export const getBoxCss = (value, property) => {
 };
 
 //gradient
-export const getGradientCss = (gradient) => {
+export const getGradientCSS = (gradient) => {
   const { type, radialType, colors, centerPositions, angel } = gradient;
   if (gradient) {
     const gradientColors = colors?.map(
@@ -48,7 +48,7 @@ const getImagePosition = (img) => {
 };
 
 //background image
-const getImageCss = (img) => {
+const getImageCSS = (img) => {
   let desktop, tablet, mobile;
   if (Object.keys(img).length > 1) {
     if (img?.desktop) {
@@ -144,30 +144,30 @@ export const getBackgroundCSS = (background) => {
     type === "color"
       ? getColor(color)
       : type === "gradient"
-        ? getGradientCss(gradient)
+        ? getGradientCSS(gradient)
         : type === "image"
-          ? getImageCss(img).global
+          ? getImageCSS(img).global
           : "";
   const hoverBg =
     hoverType === "color"
       ? getColor(hoverColor)
       : hover.type === "gradient"
-        ? getGradientCss(hoverGradient)
+        ? getGradientCSS(hoverGradient)
         : hover.type === "image"
-          ? getImageCss(hoverImg).global
+          ? getImageCSS(hoverImg).global
           : "";
   return {
     normal: {
       background: bg,
-      desktop: getImageCss(img).desktop,
-      tablet: getImageCss(img).tablet,
-      mobile: getImageCss(img).mobile,
+      desktop: getImageCSS(img).desktop,
+      tablet: getImageCSS(img).tablet,
+      mobile: getImageCSS(img).mobile,
     },
     hover: {
       background: hoverBg,
-      desktop: getImageCss(hover.img).desktop,
-      tablet: getImageCss(hover.img).tablet,
-      mobile: getImageCss(hover.img).mobile,
+      desktop: getImageCSS(hover.img).desktop,
+      tablet: getImageCSS(hover.img).tablet,
+      mobile: getImageCSS(hover.img).mobile,
     },
     transition,
   };

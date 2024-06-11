@@ -100,45 +100,11 @@ const { getOverlayCSS } = getCss;
 const { overlay } = attributes;
 
 <style>{`
-  .background::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    ${getOverlayCSS(overlay).normal.background}
-    ${getOverlayCSS(overlay).normal.desktop}
-    ${getOverlayCSS(overlay).blend}
-    ${getOverlayCSS(overlay).filter}
-    ${getOverlayCSS(overlay).opacity}
-    ${`transition:background ${getOverlayCSS(overlay).transition}s, opacity ${getOverlayCSS(overlay).transition}s, filter ${getOverlayCSS(overlay).transition}s;`}
-  }
-
-  .background:hover::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    ${getOverlayCSS(overlay).hover.background}
-    ${getOverlayCSS(overlay).hover.desktop }
-  }
-
-  //tablet 
-  @media only screen and (min-width:641px) and (max-width: 1024px) {
-      .background::after{
-    ${getOverlayCSS(overlay).normal.tablet}
-  }
-  .background:hover::after{
-    ${ getOverlayCSS(overlay).hover.tablet }
-  }
-  }
-
-  //mobile
-  @media only screen and (max-width: 640px) {
-  .background::after{
-    ${getOverlayCSS(overlay).normal.mobile}
-  }
-  .background:hover::after{
-    ${getOverlayCSS(overlay).hover.mobile}
-  }
-  }
+    .background::after{
+      content:"";
+      position:absolute;
+      ${getOverlayCSS(overlay)}
+    }
 `}</style>
 ```
 

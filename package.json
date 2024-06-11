@@ -1,6 +1,6 @@
 {
   "name": "bpl-gutenberg-panel",
-  "version": "0.0.36",
+  "version": "0.0.40",
   "description": "",
   "repository": "https://github.com/muradwahid/bpl-gutenberg-panel.git",
   "keywords": [
@@ -35,10 +35,10 @@
     "sortablejs": "^1.15.2"
   },
   "peerDependencies": {
-    "@tinymce/tinymce-react": "^4.3.2",
-    "immer": "^10.1.1",
-    "react-ace": "^11.0.1",
-    "react-sortablejs": "^6.1.4",
-    "sortablejs": "^1.15.2"
+    "@tinymce/tinymce-react": ">=4.3.2",
+    "immer": ">=10.1.1",
+    "react-ace": ">=11.0.1",
+    "react-sortablejs": ">=6.1.4",
+    "sortablejs": ">=1.15.2"
   }
 }

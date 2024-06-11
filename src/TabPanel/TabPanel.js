@@ -3,7 +3,8 @@ import React from 'react';
 import "./tabpanel.css";
 
 export const TabPanel = (props) => {
-  const { value, onChange = () => { },isAdvanced=false } = props;
+  const { value, onChange = () => { }, isAdvanced = false } = props;
+  
   return (
     <>
       <div className="tab-panel-container">

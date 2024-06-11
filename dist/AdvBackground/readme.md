@@ -74,7 +74,7 @@ import { AdvBackground } from 'bpl-gutenberg-panel';
 
 const { background } = attributes;
 
-return <AdvBackground value={background} onChange={val => setAttributes({ background: val })}/>
+return <AdvBackground value={background} onChange={val => setAttributes({ background: val })} defaults={{ fontSize: 16 }} />
 ```
 
 More props in [Options](#options).
@@ -89,35 +89,8 @@ const { getBackgroundCSS } =getCss;
 const { background } = attributes;
 
 <style>{`
-  .background{
-    ${getBackgroundCSS(background).normal.background}
-    ${getBackgroundCSS(background).normal.desktop}
-    transition:all ${getBackgroundCSS(background).transition}s ease-in-out;
-  }
-  .background:hover{
-    ${getBackgroundCSS(background).hover.background}
-    ${getBackgroundCSS(background).hover.desktop}
-    ${getBorderShadowCSS(borderShadow).hover}
-  }
-
-  //tablet device
-  @media only screen and (min-width:641px) and (max-width: 1024px){
-      .background{
-    ${getBackgroundCSS(background).normal.tablet}
-  }
-  .background:hover{
-    ${getBackgroundCSS(background).hover.tablet}
-  }
-  }
-
-  //mobile device
-  @media only screen and (max-width: 640px{
-  .background{
-    ${getBackgroundCSS(background).normal.mobile}
-  }
-  .background:hover{
-    ${getBackgroundCSS(background).hover.mobile}
-  }
+  .background:{
+    ${getBackgroundCSS(background)}
   }
 `}</style>
 ```

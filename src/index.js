@@ -24,19 +24,16 @@ import { Tab } from './Tab/Tab';
 import { TabPanel } from './TabPanel/TabPanel';
 
 import './style.scss'
-import { getBoxCss } from './utils/getCss/getCss';
-import { getGradientCss } from './utils/getCss/getCss';
-import { getShadowCSS } from './utils/getCss/getCss';
-import { getBackgroundCSS } from './utils/getCss/getCss';
-import { getOverlayCSS } from './utils/getCss/getCss';
 import { updateData } from './utils/helper/helper';
+import { getBackgroundCSS, getBorderCSS, getBoxCSS, getGradientCSS, getOverlayCSS, getShadowCSS } from './utils/getCss';
+
 export { AdvBackground, AdvOverlay, BBoxControl, BButtonGroup, BGradient, BMultiShadowControl, BorderControl, BUnitControl, CustomCodeEditor, Device, DynamicTag, Label, MediaArea, PanelAlign, PanelColorControl, PanelColorPicker, PanelCustomColorControl, PanelGradientPicker, PanelRepeater, PanelSingleShadow, RangeUnitControl, SortableProvider, Tab, TabPanel };
 
 // export * as getCss from "./utils/getCss/getCss"
 // export * as helper from "./utils/helper/helper"
 export const getCss = {
-  getBoxCss,
-  getGradientCss,
+  getBoxCSS,
+  getGradientCSS,
   getBorderCSS,
   getShadowCSS,
   getBackgroundCSS,
