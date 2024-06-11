@@ -111,7 +111,7 @@ const { background } = attributes;
   }
 
   //mobile device
-  @media only screen and (max-width: 640px{
+  @media only screen and (max-width: 640px){
   .background{
     ${getBackgroundCSS(background).normal.mobile}
   }
