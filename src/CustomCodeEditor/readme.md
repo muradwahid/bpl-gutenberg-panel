@@ -15,11 +15,24 @@ The `CustomCodeEditor` component is a WP Gutenberg component that provides a cod
 import { CustomCodeEditor } from 'bpl-gutenberg-panel';
 
 <CustomCodeEditor
-  value="body { color: #000; }"
-  onChange={(value) => console.log('Updated code:', value)}
+  value={customCss}
+  onChange={(value) => setAttributes({customCss:val})}
   height="400px"
   width="80%"
 />
+```
+
+<br />
+
+### Style.js
+```jsx
+const {customCss} =attributes;
+
+<style>{`
+
+  ${customCss}
+  
+`}</style>
 ```
 
 ## Note
