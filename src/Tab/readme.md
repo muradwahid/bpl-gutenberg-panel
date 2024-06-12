@@ -1,32 +1,33 @@
 # Tab Component
 
-The `Tab` component is a WP Gutenberg component that provides a tabbed interface for selecting options. It allows users to click on different tabs to change the active selection.
-
-## Props
-
-- `options`: An array of options to be displayed as tabs.
-- `onChange`: A function to handle the change event when a tab is clicked.
-- `value`: The currently selected tab value.
-- `paddingY`: The vertical padding for the tab content.
-- `paddingX`: The horizontal padding for the tab content.
+The Tab component is a reusable WP Gutenberg component designed to render a tabbed interface with customizable styles and functionality. It provides a simple and intuitive way to create tabbed navigation elements within a React application.
 
 ## Usage
 
-```jsx
-import { Tab } from 'bpl-gutenberg-panel';
+```javascript
+const MyComponent = () => {
+  return (
+    <Tab
+      options={["Tab 1", "Tab 2", "Tab 3"]}
+      value={tab}
+      onChange={(value) => setTab(tab)}
+    />
+  );
+};
 
-
-<Tab
-  options={['Option 1', 'Option 2', 'Option 3']}
-  value="option1"
-  onChange={(newValue) => console.log('New tab value:', newValue)}
-  paddingY={4}
-  paddingX={0}
-/>
+export default MyComponent;
 ```
 
-## Functionality
+## Props
 
-The `Tab` component renders a set of tabs based on the provided options. When a tab is clicked, the `onChange` function is called with the corresponding option value. The active tab is visually distinguished from the inactive tabs.
+The Tab component accepts the following props:
 
-I hope this README provides a clear understanding of the `Tab` component!
+- `options`: An array of strings representing the tab labels.
+- `value`: The currently selected tab value.
+- `onChange`: A callback function to handle tab change events.
+- `paddingY`: Vertical padding for the tab labels.
+- `paddingX`: Horizontal padding for the tab labels.
+- `borderColor`: Color of the tab borders.
+- `hoverColor`: Background color of the tabs on hover.
+- `activeColor`: Background color of the active tab.
+- `color`: Text color of the tab labels.
