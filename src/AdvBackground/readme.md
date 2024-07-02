@@ -97,7 +97,6 @@ const { background } = attributes;
   .background:hover{
     ${getBackgroundCSS(background).hover.background}
     ${getBackgroundCSS(background).hover.desktop}
-    ${getBorderShadowCSS(borderShadow).hover}
   }
 
   //tablet device
