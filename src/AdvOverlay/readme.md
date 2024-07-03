@@ -109,7 +109,7 @@ const { overlay } = attributes;
     ${getOverlayCSS(overlay).blend}
     ${getOverlayCSS(overlay).filter}
     ${getOverlayCSS(overlay).opacity}
-    ${`transition:background ${getOverlayCSS(overlay).transition}s, opacity ${getOverlayCSS(overlay).transition}s, filter ${getOverlayCSS(overlay).transition}s;`}
+    ${`transition:background ${getOverlayCSS(overlay).transition}s;`}
   }
 
   .background:hover::after{
